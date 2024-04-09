@@ -5,6 +5,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   redirect,
+  useLocation,
 } from "react-router-dom";
 import Layout from "./Components/Layout";
 import Home from "./Components/Home";
@@ -23,7 +24,10 @@ function App() {
       <Route path="/" element={<Layout />} errorElement={<Error />}>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/help" element={<Help />}>
+        <Route
+          path="/help"
+          element={<Help />}
+        >
           <Route path="faq" element={<FAQ />} />
           <Route
             path="contact"

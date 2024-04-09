@@ -6,8 +6,8 @@ const Contact = () => {
   // console.log(data);
   return (
     <>
-      <h1 className="text-lg">Contact Us</h1>
-      <div className="mt-10 w-full h-4/5 my-0 mx-auto p-4 box-border rounded-lg">
+      <h1 className="text-lg p-6 pb-4">Contact Us</h1>
+      <div className="mt-10 w-full h-4/5 my-0 mx-auto px-10  box-border rounded-lg">
         <Form method="post" action="/help/contact" className="space-y-4">
           <div>
             <label className="sr-only" htmlFor="name">

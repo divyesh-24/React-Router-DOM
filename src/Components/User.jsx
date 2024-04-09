@@ -8,20 +8,17 @@ const User = () => {
   const Users = useLoaderData();
   const path = useLocation();
   return (
-    <div div className="h-full ">
+    <div div className="">
       <div className="w-full mx-auto my-4 flex justify-center items-center text-6xl capitalize">
         Users
       </div>
-      {/* <p>Here is help!!</p> */}
-      <div className="w-full flex h-full justify-around p-8">
-        <div className="flex h-fit p-6 gap-2 flex-wrap justify-between">
+      <div className="w-full flex h-full justify-around px-8 py-2">
+        <div className="flex gap-6 flex-wrap justify-between w-full h-[39.5rem] p-10  border border-black rounded-md overflow-y-auto">
           {Users.map((project, i) => (
             <Link
               key={i}
               to={`/user/${project?.id}/tasks`}
-              className={`border  px-3 py-2 rounded-md w-1/4 ${
-                path.pathname === "/help/faq" ? "border-black" : ""
-              }`}
+              className={`border  px-3 py-2 rounded-md w-1/4 hover:border-dashed hover:border-black active:border-solid`}
             >
               <div className="px-3 py-3">
                 <p>{project.name}</p>

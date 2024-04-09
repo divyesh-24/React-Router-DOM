@@ -1,31 +1,41 @@
 import React from "react";
-import { NavLink, Navigate, Outlet, redirect, useLocation } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
+const path = [
+  { name: "Home", to: "/" },
+  { name: "About", to: "/about" },
+  { name: "Users", to: "/user" },
+  { name: "help", to: "/help" },
+];
 const Layout = () => {
-  const path = useLocation()
-  
-  // console.log(path.pathname);
-  // if (path.pathname == "/help" && path.pathname == "/help/") {
-  //   return redirect("/");
-  // }
   return (
-    <div className="max-w-7xl mx-auto mt-8">
-      {path.pathname == "/help" && path.pathname == "/help/" && (
-        <Navigate to="/help/faq" replace={true} />
-      )}
-      <header className=" border-black border flex justify-between px-10 py-5 items-center">
-        <h1 className="text-2xl">Dashboard</h1>
-        <nav className=" flex flex-row gap-3">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/user">Users</NavLink>
-          <NavLink to="/help/faq">Help</NavLink>
+    <div className="max-w-7xl mx-auto h-screen pt-8">
+      <header className=" border-black border flex justify-between px-10 py-5 items-center rounded-md">
+        <Link to="/" className="text-2xl ">
+          Dashboard
+        </Link>
+        <nav className=" flex flex-row gap-5">
+          {path.map((nav, i) => (
+            <NavLink
+              key={i}
+              to={nav.to}
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "px-3 py-1 border rounded-md border-black"
+                  : isActive
+                  ? "px-3 py-1 border rounded-md border-black"
+                  : "px-3 py-1 border rounded-md hover:border-dashed "
+              }
+            >
+              {nav.name}
+            </NavLink>
+          ))}
         </nav>
       </header>
-      <div className="border my-6 border-black h-[80vh]">
+      <div className="border mb-6 mt-8 border-black h-4/5 rounded-md">
         <Outlet />
       </div>
-      <footer className="mx-auto w-full text-center">
+      <footer className="mx-auto w-full text-center p-4">
         made with ❤️ by Divyesh Nandanwar
       </footer>
     </div>

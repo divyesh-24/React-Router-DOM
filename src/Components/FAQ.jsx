@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const FAQ = () => {
   const questions = [
@@ -29,16 +29,15 @@ const FAQ = () => {
     },
   ];
   return (
-    <>
-      <h1 className="text-lg">FAQs</h1>
-      <div className="space-y-4 overflow-auto">
+    <div className="relative">
+      <h1 className="text-lg sticky top-0 bg-white p-6 pb-4 z-40">FAQs (Frequently Asked Questions)</h1>
+      <div className="space-y-5 mx-auto mt-10 px-10">
         {questions.map((ques) => (
           <details
             key={ques.id}
             className="group [&_summary::-webkit-details-marker]:hidden"
-            open
           >
-            <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+            <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg  p-4 text-gray-900 border border-gray-200    group-open:border-black group-open:border-solid hover:border-gray-800 hover:border-dashed">
               <h2 className="font-medium">{ques.que}</h2>
 
               <svg
@@ -63,7 +62,7 @@ const FAQ = () => {
           </details>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
