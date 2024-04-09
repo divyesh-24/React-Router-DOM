@@ -109,7 +109,7 @@ const About = () => {
         About
       </div>
       <div className="w-full flex h-full justify-around px-8">
-        <div className="flex w-5/6 h-[40rem] p-3 gap-2 flex-wrap justify-between overflow-auto">
+        <div className="flex w-5/6 h-[35rem] p-6 gap-2 flex-wrap justify-between overflow-auto border rounded-md border-black ">
           <p className="">
             This project is centered on utilizing{" "}
             <span className="text-red-900 text-xl">React Router DOM</span>{" "}

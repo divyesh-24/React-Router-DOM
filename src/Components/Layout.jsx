@@ -32,7 +32,7 @@ const Layout = () => {
           ))}
         </nav>
       </header>
-      <div className="border mb-6 mt-8 border-black h-4/5 rounded-md">
+      <div className="border mb-2 mt-8 border-black h-4/5 rounded-md overflow-auto">
         <Outlet />
       </div>
       <footer className="mx-auto w-full text-center p-4">

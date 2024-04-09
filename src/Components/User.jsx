@@ -13,7 +13,7 @@ const User = () => {
         Users
       </div>
       <div className="w-full flex h-full justify-around px-8 py-2">
-        <div className="flex gap-6 flex-wrap justify-between w-full h-[39.5rem] p-10  border border-black rounded-md overflow-y-auto">
+        <div className="flex gap-6 flex-wrap justify-between w-full h-[35rem] p-10  border border-black rounded-md overflow-y-auto">
           {Users.map((project, i) => (
             <Link
               key={i}
